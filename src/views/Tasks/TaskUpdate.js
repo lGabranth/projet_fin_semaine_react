@@ -35,7 +35,7 @@ export default class TaskUpdate extends Component {
   }
 
   render() {
-    let {task} = this.state;
+    let {title, completed, userId} = this.state;
     return <div className="container text-center">
       <h1>Ajouter une tâche</h1>
 
@@ -44,19 +44,19 @@ export default class TaskUpdate extends Component {
           <form className="mt-4" onSubmit={e => this.handleSubmit(e)}>
             <div className="form-group">
               <label>Titre</label>
-              <input type="text" name="title" value={task && task.title} className="form-control" required onChange={e => this.handleChange(e)}/>
+              <input type="text" name="title" value={title} className="form-control" required onChange={e => this.handleChange(e)}/>
             </div>
 
             <div className="form-group mt-3">
               <label for="completed">Déjà complétée ?</label>
-              <input type="checkbox" id="completed" checked={task && task.completed} name="completed" onChange={e => this.handleChange(e)}/>
+              <input type="checkbox" id="completed" checked={completed} name="completed" onChange={e => this.handleChange(e)}/>
             </div>
 
             {
               this.state.users.length > 0 &&
                 <div className="form-group mt-3">
                   <label htmlFor="completed">User lié : </label>
-                  <select name="userId" id="userId" className="form-control" value={task && task.userId} onChange={e => this.handleChange(e)}>
+                  <select name="userId" id="userId" className="form-control" value={userId} onChange={e => this.handleChange(e)}>
                     <option value="0">Choisissez un user</option>
                     {
                       this.state.users.map(user => {

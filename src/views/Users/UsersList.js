@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import UserService from "../../services/user.service";
+import {Link} from "react-router-dom";
 
 export default class UsersList extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ export default class UsersList extends Component {
       <h1>Liste des utilisateurs</h1>
 
       <div className="row">
-        <table className="table-striped table-responsive">
+        <table className="table table-striped table-hover">
           <thead>
             <tr>
               <th>#</th>
@@ -29,6 +30,7 @@ export default class UsersList extends Component {
               <th>Email</th>
               <th>Téléphone</th>
               <th>Nb tâches</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -40,6 +42,7 @@ export default class UsersList extends Component {
                 <td>{ user.email }</td>
                 <td>{ user.phone }</td>
                 <td>{ user.nb_doing + user.nb_done }</td>
+                <td><Link to={`/users/${user.id}`} className="btn btn-sm btn-primary">Détails</Link></td>
               </tr>
             })
           }

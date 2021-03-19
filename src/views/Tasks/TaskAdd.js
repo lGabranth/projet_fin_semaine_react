@@ -28,6 +28,8 @@ export default class TaskAdd extends Component {
 
     let {title, completed, userId} = this.state;
     await TaskService.create({title, completed, userId});
+    //let call = await TaskService.create({title, completed, userId});
+    //console.log(call);
     this.props.history.push('/tasks');
   }
 

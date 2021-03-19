@@ -35,8 +35,15 @@ export default class TasksList extends Component {
   render() {
     return <div className="row mt-4">
       <div className="col">
-        <input type="text" onChange={(e) => this.handleChange(e)}/>
-        <Link className="btn btn-sm btn-success" to="/tasks/add"><i className="fas fa-plus" /> Ajouter</Link>
+        <div className="row">
+          <div className="offset-1 col-10">
+            <div className="input-group">
+              <input type="search" placeholder="Rechercher une tâche.." className="form-control" onChange={(e) => this.handleChange(e)}/>
+              <button className="btn btn-primary"><i className="fas fa-search" /></button>
+            </div>
+            <Link className="btn btn-sm btn-success mt-2" to="/tasks/add"><i className="fas fa-plus" /> Ajouter</Link>
+          </div>
+        </div>
         <div className="row mt-4">
           {
             this.state.tasks_filtree.map(task => {

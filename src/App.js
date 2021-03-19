@@ -16,15 +16,17 @@ export default class App extends Component {
       {/*HEADER*/}
       <Header />
 
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/tasks" component={TasksList} />
-        <Route exact path="/tasks/add" component={TaskAdd} />
-        <Route exact path="/tasks/:id" component={TaskDetails} />
-        <Route exact path="/tasks/:id/modifier" component={TaskUpdate} />
-        <Route exact path="/users" component={UsersList} />
-        <Route exact path="/users/:id" component={UserDetails} />
-      </Switch>
+      <div className="container">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/tasks" component={TasksList} />
+          <Route exact path="/tasks/add" component={TaskAdd} />
+          <Route exact path="/tasks/:id" component={TaskDetails} />
+          <Route exact path="/tasks/:id/modifier" component={TaskUpdate} />
+          <Route exact path="/users" component={UsersList} />
+          <Route exact path="/users/:id" component={UserDetails} />
+        </Switch>
+      </div>
 
       <Footer />
     </BrowserRouter>

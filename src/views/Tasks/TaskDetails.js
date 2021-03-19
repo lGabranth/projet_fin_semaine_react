@@ -28,7 +28,7 @@ export default class TaskDetails extends Component {
       <h1>Tâche - {task && task.title}</h1>
       <h2>Statut : { task && task.completed ? 'Complétée' : 'En cours'}</h2>
       { task && <div>
-          <Link to={`/users/${task.id}`}>{task.user && task.user.name}</Link>
+          <Link to={`/users/${task.userId}`}>{task.user && task.user.name}</Link>
         </div>
       }
 
