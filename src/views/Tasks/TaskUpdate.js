@@ -37,7 +37,7 @@ export default class TaskUpdate extends Component {
   render() {
     let {title, completed, userId} = this.state;
     return <div className="container text-center">
-      <h1>Ajouter une tâche</h1>
+      <h1>Modifier une tâche</h1>
 
       <div className="row">
         <div className="col">
@@ -66,7 +66,7 @@ export default class TaskUpdate extends Component {
                   </select>
                 </div>
             }
-            <button className="btn btn-primary btn-sm mt-4" type="submit">Modifier</button>
+            <button className="btn btn-warning btn-sm mt-4" type="submit">Modifier</button>
           </form>
         </div>
       </div>
