@@ -16,7 +16,11 @@ export default class Home extends Component {
         <div className="col text-center">
           <h1>Homepage</h1>
           <div className="row">
-            Veuillez naviguer directement depuis la navbar
+            <div className="alert alert-info mt-4">
+              <i className="fas fa-lg fa-info-circle" /> &nbsp;
+              Veuillez naviguer directement depuis la navbar
+              &nbsp; <i className="fas fa-lg fa-info-circle" />
+            </div>
           </div>
         </div>
       </div>
