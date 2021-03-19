@@ -11,12 +11,12 @@ export default class Home extends Component {
   render() {
 
     return <div className="container">
-      <h1 className="jumbotron">Homepage</h1>
 
-      <div className="row">
-        <div className="col">
+      <div className="row mt-4">
+        <div className="col text-center">
+          <h1>Homepage</h1>
           <div className="row">
-            test
+            Veuillez naviguer directement depuis la navbar
           </div>
         </div>
       </div>
