@@ -25,17 +25,27 @@ export default class TaskDetails extends Component {
     let {task} = this.state;
 
     return <div className="container">
-      <h1>Tâche - {task && task.title}</h1>
-      <h2>Statut : { task && task.completed ? 'Complétée' : 'En cours'}</h2>
-      { task && <div>
-          <Link to={`/users/${task.userId}`}>{task.user && task.user.name}</Link>
-        </div>
-      }
+      <div className="row">
+        <div className="col text-center">
+          <h1>Tâche - {task && task.title}</h1>
+          <h2>Statut : { task && task.completed ? 'Complétée' : 'En cours'}</h2>
+          { task && <div>
+              <Link to={`/users/${task.userId}`}>{task.user && task.user.name}</Link>
+            </div>
+          }
 
-      {
-        task && <Link className="btn btn-sm btn-warning" to={`/tasks/${task.id}/modifier`}>Modifier</Link>
-      }
-      <button className="btn btn-sm btn-danger" onClick={() => this.handleDelete()}>Supprimer</button>
+          <div className="row mt-4">
+            {
+              task && <div className="col">
+                <Link className="btn btn-sm btn-warning" to={`/tasks/${task.id}/modifier`}>Modifier</Link>
+              </div>
+            }
+            <div className="col text-left">
+              <button className="btn btn-sm btn-danger" onClick={() => this.handleDelete()}>Supprimer</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   }
 }
