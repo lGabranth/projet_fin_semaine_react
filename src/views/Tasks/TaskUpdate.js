@@ -48,7 +48,7 @@ export default class TaskUpdate extends Component {
             </div>
 
             <div className="form-group mt-3">
-              <label for="completed">Déjà complétée ?</label>
+              <label htmlFor="completed">Déjà complétée ?</label>
               <input type="checkbox" id="completed" checked={completed} name="completed" onChange={e => this.handleChange(e)}/>
             </div>
 
@@ -59,8 +59,8 @@ export default class TaskUpdate extends Component {
                   <select name="userId" id="userId" className="form-control" value={userId} onChange={e => this.handleChange(e)}>
                     <option value="0">Choisissez un user</option>
                     {
-                      this.state.users.map(user => {
-                        return <option value={user.id}>{user.name}</option>
+                      this.state.users.map((user, index) => {
+                        return <option key={index} value={user.id}>{user.name}</option>
                       })
                     }
                   </select>
